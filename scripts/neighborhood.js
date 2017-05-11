@@ -11,8 +11,11 @@ Neighborhood.prototype.toHtml = function() {
   // REVIEW: This method on each instance of Neighborhood allows that object to create its own HTML
   // TODO: Complete this using Handlebars!!!
   // 1. Get the template from the HTML document
+  var template = $('#neighborhood-template').html();
   // 2. Use Handlebars to "compile" the HTML
+  var templateRender = Handlebars.compile(template);
   // 3. Do not forget to return the HTML from this method
+  return templateRender(this);
 };
 
 neighborhoodDataSet.forEach(function(neighborhoodObject) {
